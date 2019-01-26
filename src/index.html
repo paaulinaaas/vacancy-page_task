@@ -65,43 +65,61 @@
         <h2 class="heading-2">Apply for the position of the Purchasing Assistant</h2>
             <div class="wrapper">
                     <form class="form">
-                        <div class="form__field">
-                            <label for="firstName" class="form__label">First Name</label>
-                            <input type="text" id="firstName" class="form__input" required>
+                        <span>Personal details*</span>
+                        <div class="form__container">
+                            <div class="form__field">
+                                <label for="firstName" class="form__label">First Name</label>
+                                <input type="text" id="firstName" class="form__input" required>
+                            </div>
+                            <div class="form__field">
+                                <label for="lastName" class="form__label">Last Name</label>
+                                <input type="text" id="lastName" class="form__input" required>
+                            </div>
+                            <div class="form__field">
+                                <label for="datepicker" class="form__label">Birth Date</label>
+                                <input type="text" id="datepicker" class="form__input" required>
+                            </div>
+                            <div class="form__field">
+                                <label for="emailAdress" class="form__label">Email</label>
+                                <input type="email" id="emailAdress" class="form__input">
+                            </div>
                         </div>
-                        <div class="form__field">
-                            <label for="lastName" class="form__label">Last Name</label>
-                            <input type="text" id="lastName" class="form__input" required>
+                        <span>Adress*</span>
+                        <div class="form__container">
+                            <div class="form__field">
+                                <label for="streetName" class="form__label">Street</label>
+                                <input type="text" id="streetName" class="form__input" required>
+                            </div>
+                             <div class="form__field">
+                                 <label for="streetNumber" class="form__label">House number</label>
+                                <input type="number" id="streetNumber" class="form__input" required>
+                             </div>
+                            <div class="form__field">
+                                 <label for="postalCode" class="form__label">Postal code</label>
+                                <input type="text" id="postalCode" class="form__input" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required>
+                             </div>
+                            <div class="form__field">
+                                <label for="gender" class="form__label">Gender</label>
+                                <select id="gender" class="form__input" required>
+                                    <option disabled selected></option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form__field">
+                                <label for="resume" class="form__label">Your motivation:</label>
+                                <textarea rows="6" name="resume" id="resume" class="form__input"></textarea>
+                            </div>
+                            <div class="form__field">
+                                <label for="fileUpload" class="form__upload">Upload your resume
+                                    <span class="icon-folder-upload"></span>
+                                <input type="file" accept=".doc, .docx, .pdf, .rtf, .txt" id="fileUpload" class="form__input--blue">
+                                </label>
+                            </div>
+                            <span>Attach your documents*</span>
+                            <input type="submit" value="Apply for this job">
+                            <div id="container1"></div>
                         </div>
-                        <div class="form__field">
-                            <label for="datepicker" class="form__label">Birth Date</label>
-                            <input type="text" id="datepicker" class="form__input" required>
-                        </div>
-                        <div class="form__field">
-                            <label for="emailAdress" class="form__label">Email</label>
-                            <input type="email" id="emailAdress" class="form__input">
-                        </div>
-                        <div class="form__field">
-                            <label for="streetName" class="form__label">Street</label>
-                            <input type="text" id="streetName" class="form__input" required>
-                        </div>
-                         <div class="form__field">
-                             <label for="streetNumber" class="form__label">House number</label>
-                            <input type="number" id="streetNumber" class="form__input" placeholder="Last Name" required>
-                         </div>
-                        <div class="form__field">
-                             <label for="postalCode" class="form__label">Postal code</label>
-                            <input type="text" id="postalCode" class="form__input" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required>
-                         </div>
-                        <div class="form__field">
-                            <label>Gender</label>
-                            <input type="radio" id="gender" value="Male" name="gender">
-                            <span>Male</span>
-                            <label for="gender" class="visually-hidden"></label>
-                            <input type="radio" id="gender" value="Female" name="gender">
-                            <span>Female</span>
-                        </div>
-                        <input type="submit">
                     </form>
             </div>
     </section>
@@ -213,7 +231,6 @@
 </footer>
 </body>
 
-<script>
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="w1m7f7o05t5d7p0"></script>
 
-</script>
 </html>
