@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Log in/Sign up Form</title>
 </head>
 <body>
@@ -43,7 +44,7 @@
                         <span class="icon-search"></span>
                     </button>
                 </form>
-                <a href="#" class="icon-briefcase nav__jobs"></a>
+                <a href="#" class="icon-briefcase nav__icon"></a>
             </div>
         </div>
     </nav>
@@ -51,7 +52,7 @@
 
 <main>
     <section class="hero">
-        <div class="wrapper">
+        <div class="wrapper full-height">
             <div class="hero__container">
                 <div class="hero__content">
                     <h1 class="heading-1">Purchasing assistant</h1>
@@ -65,8 +66,8 @@
         <h2 class="heading-2">Apply for the position of the Purchasing Assistant</h2>
             <div class="wrapper">
                     <form class="form">
-                        <span>Personal details*</span>
                         <div class="form__container">
+                            <h3 class="form__heading">Personal details*</h3>
                             <div class="form__field">
                                 <label for="firstName" class="form__label">First Name</label>
                                 <input type="text" id="firstName" class="form__input" required>
@@ -83,9 +84,6 @@
                                 <label for="emailAdress" class="form__label">Email</label>
                                 <input type="email" id="emailAdress" class="form__input">
                             </div>
-                        </div>
-                        <span>Adress*</span>
-                        <div class="form__container">
                             <div class="form__field">
                                 <label for="streetName" class="form__label">Street</label>
                                 <input type="text" id="streetName" class="form__input" required>
@@ -106,21 +104,26 @@
                                     <option value="Female">Female</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="form__container">
+                            <h3 class="form__heading">Your motivation*</h3>
                             <div class="form__field">
-                                <label for="resume" class="form__label">Your motivation:</label>
+                                <label for="resume" class="visually-hidden">Your motivation</label>
                                 <textarea rows="6" name="resume" id="resume" class="form__input"></textarea>
                             </div>
-                            <div class="form__field">
-                                <label for="fileUpload" class="form__upload">Upload your resume
-                                    <span class="icon-folder-upload"></span>
-                                <input type="file" accept=".doc, .docx, .pdf, .rtf, .txt" id="fileUpload" class="form__input--blue">
+                            <div class="form__upload form__field">
+                                <div class="form__upload-box" id="file-name"></div>
+                                <label for="fileUpload" class="form__upload-btn form__btn">
+                                    <span class="icon-folder-upload form__icon"></span>
+                                    Upload your resume
+                                    <input type="file" accept=".doc, .docx, .pdf, .rtf, .txt" id="fileUpload" class="visually-hidden" onchange='uploadFile(this)'>
                                 </label>
                             </div>
-                            <span>Attach your documents*</span>
-                            <input type="submit" value="Apply for this job">
+                            <input type="submit" value="Apply for this job" class="form__submit form__btn">
                             <div id="container1"></div>
                         </div>
                     </form>
+            </div>
             </div>
     </section>
 
@@ -232,5 +235,9 @@
 </body>
 
 <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="w1m7f7o05t5d7p0"></script>
-
+<script>
+    function uploadFile(target) {
+        document.getElementById("file-name").innerHTML = target.files[0].name;
+    }
+</script>
 </html>

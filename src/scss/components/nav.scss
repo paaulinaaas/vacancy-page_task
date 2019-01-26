@@ -2,8 +2,7 @@
 .nav {
   background: $color-primary;
   color: $color-light;
-  padding: 10px;
-
+  padding: 0.5rem;
   &__container {
     position: relative;
     width: 100%;
@@ -15,12 +14,11 @@
       flex-direction: row;
       align-items: center;
     }
-
   }
-  &__jobs {
+  &__icon {
     position: absolute;
     top: 25%;
-    right: 25px;
+    right: 1.5rem;
     transform: translateY(-50%) scale(1.125);
     @media #{$mediaLarge} {
       position: relative;

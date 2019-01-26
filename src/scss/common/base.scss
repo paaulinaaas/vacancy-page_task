@@ -3,7 +3,10 @@ $color-primary: #282828;
 $color-secondary: #F5F5F5;
 $color-light: #fff;
 $color-dark: #757575;
+$color-btn: #0062FF;
+$main-font: 'Yanone Kaffeesatz', sans-serif;
 
+//MEDIA
 $mediaSmall:   "only screen and (min-width : 480px)";
 $mediaMedium:   "only screen and (min-width : 768px)";
 $mediaLarge:   "only screen and (min-width : 940px)";
@@ -14,7 +17,7 @@ body {
 }
 
 body {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: $main-font;
   font-size: 16px;
   width: 100%;
   text-align: center;
@@ -46,6 +49,13 @@ a {
   }
 }
 
+input,
+textarea,
+select {
+  border: 1px solid #757575;
+  font-family: $main-font;
+}
+
 .no-underline {
   &:hover,
   &.active {
@@ -75,18 +85,13 @@ a {
   padding: 0.75rem 0;
 }
 .wrapper {
+  box-sizing: border-box;
   max-width: 940px;
   margin: 0 auto;
 }
 .wrapper--big {
   max-width: 1440px;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr)
-}
-
-
 
 
 
@@ -102,3 +107,6 @@ a {
   border: 0;
 }
 
+.full-height {
+  height: 100%;
+}

@@ -1,25 +1,19 @@
 @import "./common/base";
 .form {
+  padding-top: 1rem;
   &__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
+    margin-top: 1.5rem;
   }
   &__field {
     position: relative;
     margin-top: 1rem;
-    box-sizing: border-box;
     width: 100%;
-
     @media #{$mediaLarge} {
       width: calc(50% - 1rem);
-
-      &:nth-of-type(even) {
-        //margin-left: 1rem;
-      }
-      &:nth-of-type(odd) {
-       // margin-right: 1rem;
-      }
     }
   }
   &__label {
@@ -34,22 +28,49 @@
     box-sizing: border-box;
     padding: 1rem 0.25rem 0.5rem;
     width: 100%;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 1rem;
-    &--blue {
-      visibility: hidden;
-    }
   }
   &__upload {
-    background-color: #0062FF;
+    display: flex;
+    height: 2.75rem;
+  }
+  &__upload-btn {
+    width: 50%;
+  }
+  &__upload-box {
+    box-sizing: border-box;
+    border: 0.0625rem solid $color-dark;
+    border-right: none;
+    background: $color-light;
+    width:50%;
+    display:flex;
+    align-items: center;
+  }
+  &__icon {
+    transform: scale(1.25);
+    margin: 0 1rem 0.5rem 0;
+  }
+  &__heading {
+    position: absolute;
+    top: -0.25rem;
+  }
+  &__submit {
+    padding: 0.75rem;
+    margin: 2rem auto 0 0;
+    width:100%;
+    @media #{$mediaLarge} {
+      width: calc(50% - 1rem);
+    }
+  }
+  &__btn {
+    background-color: $color-btn;
+    color: $color-light;
+    border: 1px solid $color-dark;
     position: relative;
     display: flex;
-    color: $color-light;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
     font-size: 1.25rem;
-    text-align: center;
   }
-}
-input[type=radio]{
-  position: absolute;
-  visibility: hidden;
 }
