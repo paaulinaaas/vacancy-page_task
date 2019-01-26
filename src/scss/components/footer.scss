@@ -1,0 +1,30 @@
+.footer {
+  background-color: $color-light;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0 2rem;
+    @media #{$mediaMedium} {
+      justify-content: space-around;
+    }
+    @media #{$mediaLarge} {
+      padding: 0;
+      justify-content: space-between;
+    }
+  }
+  &__col {
+    text-align: justify;
+    padding: 1.5rem;
+  }
+  &__list-item {
+    margin: 0 0 0.5rem 0;
+    display: flex;
+  }
+  &__link {
+    display: flex;
+  }
+  &__list-icons {
+    column-count: 2;
+  }
+}

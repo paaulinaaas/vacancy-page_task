@@ -1,0 +1,30 @@
+@import "./common/base";
+.nav {
+  background: $color-primary;
+  color: $color-light;
+  padding: 10px;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media #{$mediaLarge} {
+      flex-direction: row;
+      align-items: center;
+    }
+
+  }
+  &__jobs {
+    position: absolute;
+    top: 25%;
+    right: 25px;
+    transform: translateY(-50%) scale(1.125);
+    @media #{$mediaLarge} {
+      position: relative;
+      transform: translateY(0) scale(1.25);
+    }
+  }
+}

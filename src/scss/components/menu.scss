@@ -1,0 +1,40 @@
+.menu {
+  transform: translate(-100%);
+  transition: transform .4s ease-in;
+  position: fixed;
+  top: 98px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 1;
+  background: $color-primary;
+  @media #{$mediaLarge} {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    transform: none;
+  }
+  &__item {
+    padding-right: 30px;
+  }
+  &__link {
+    font-size: 1.125rem;
+    color: $color-light;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    &:before {
+      background-color: $color-light;
+      height: .125rem;
+      bottom: -4px;
+    }
+  }
+  &.open {
+    display: block;
+    transform: translateX(0);
+    width: 100%;
+    height: 100%;
+  }
+}

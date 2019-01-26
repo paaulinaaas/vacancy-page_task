@@ -1,0 +1,23 @@
+.search {
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  width: 100%;
+  display: block;
+  @media #{$mediaLarge} {
+    width: 315px;
+  }
+  &__input {
+    padding: 6px;
+    width: 100%;
+    &::placeholder {
+      text-transform: uppercase;
+    }
+  }
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}

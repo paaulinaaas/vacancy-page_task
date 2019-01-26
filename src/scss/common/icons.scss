@@ -1,0 +1,66 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+[class^="icon-"] {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(".././img/sprite.svg");
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.icon-folder-upload {
+  background-position: 0 0;
+}
+.icon-envelop {
+  background-position: 0 -16px;
+}
+.icon-search {
+  background-position: 0 -32px;
+}
+.icon-briefcase {
+  background-position: 0 -48px;
+}
+.icon-google-plus {
+  background-position: 0 -64px;
+}
+.icon-facebook {
+  background-position: 0 -80px;
+}
+.icon-instagram {
+  background-position: 0 -96px;
+}
+.icon-twitter {
+  background-position: 0 -112px;
+}
+.icon-youtube {
+  background-position: 0 -128px;
+}
+.icon-dropbox {
+  background-position: 0 -144px;
+}
+.icon-tumblr {
+  background-position: 0 -160px;
+}
+.icon-linkedin2 {
+  background-position: 0 -176px;
+}
+.icon-pinterest2 {
+  background-position: 0 -192px;
+}

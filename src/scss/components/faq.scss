@@ -1,0 +1,39 @@
+.faq {
+  background: url("../../dist/dist/img/background-faq.png")no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  &__container {
+    background: $color-secondary;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__col {
+    box-sizing: border-box;
+    text-align: left;
+    padding: 25px;
+    @media #{$mediaMedium} {
+      width:50%;
+    }
+  }
+  &__list {
+    list-style-type: disc;
+  }
+  &__content {
+    padding: 1rem 0.75rem;
+    line-height: 1.25rem;
+    &:last-child {
+      padding: 1rem 0;
+    }
+  }
+  &__info {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  &__link {
+    display: inline-block;
+    margin: 0.125rem 1rem;
+    color: $color-dark;
+  }
+}
