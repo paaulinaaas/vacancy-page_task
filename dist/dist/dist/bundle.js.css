@@ -386,7 +386,7 @@ select {
             column-count: 2; }
 
 .faq {
-  background: url(./img/background-faq.png) no-repeat;
+  background: url(../img/background-faq.png) no-repeat;
   background-size: cover;
   background-position: center;
   padding: 3.125rem; }
