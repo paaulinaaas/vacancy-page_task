@@ -10,6 +10,17 @@ body {
   text-align: center;
   background-color: #F5F5F5; }
 
+input:focus-within,
+label:focus-within,
+select:focus-within,
+textarea:focus-within {
+  outline: 1px solid #0062FF;
+  outline-offset: 3px; }
+
+@media only screen and (min-width: 940px) {
+  header {
+    height: 56px; } }
+
 a {
   position: relative;
   cursor: pointer;
@@ -67,9 +78,6 @@ select {
   max-width: 940px;
   margin: 0 auto; }
 
-.wrapper--big {
-  max-width: 1440px; }
-
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -82,6 +90,9 @@ select {
 
 .full-height {
   height: 100%; }
+
+.warning {
+  outline: 1.5px solid red; }
 
 .form {
   padding-top: 1rem; }
@@ -122,7 +133,8 @@ select {
     background: #fff;
     width: 50%;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    padding-left: 0.5rem; }
   .form__icon {
     -webkit-transform: scale(1.25);
             transform: scale(1.25);
@@ -146,7 +158,24 @@ select {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    transition: background-color .2s ease-in; }
+    .form__btn:hover {
+      background-color: #757575; }
+  .form__info {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    margin-top: 2rem;
+    display: none; }
+
+.show {
+  display: block; }
+
+@media only screen and (-ms-high-contrast: active) and (min-width: 940px), only screen and (-ms-high-contrast: none) and (min-width: 940px) {
+  .form__field {
+    width: 100%; } }
 
 .btn {
   margin: 0;
@@ -165,7 +194,7 @@ select {
     height: 100%; }
   .hero__content {
     position: absolute;
-    top: 0;
+    top: 88px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -179,6 +208,7 @@ select {
     @media only screen and (min-width: 940px) {
       .hero__content {
         top: 50%;
+        bottom: auto;
         -webkit-transform: translateY(-50%);
                 transform: translateY(-50%);
         padding: 3rem 0;
@@ -191,9 +221,13 @@ select {
         font-size: 2.5rem; } }
 
 .nav {
+  box-sizing: border-box;
   background: #282828;
   color: #fff;
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1; }
   .nav__container {
     position: relative;
     width: 100%;
@@ -239,31 +273,37 @@ select {
             transform: rotate(45deg) translate(-8px, -5px); }
 
 .menu {
+  box-sizing: border-box;
   -webkit-transform: translate(-100%);
           transform: translate(-100%);
-  transition: -webkit-transform .4s ease-in;
-  transition: transform .4s ease-in;
-  transition: transform .4s ease-in, -webkit-transform .4s ease-in;
+  transition: -webkit-transform .3s ease-in;
+  transition: transform .3s ease-in;
+  transition: transform .3s ease-in, -webkit-transform .3s ease-in;
   position: fixed;
-  top: 98px;
+  top: 88px;
   left: 0;
   right: 0;
   bottom: 0;
   height: 100%;
   z-index: 1;
-  background: #282828; }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #282828;
+  padding: 2rem;
+  font-size: 2rem; }
   @media only screen and (min-width: 940px) {
     .menu {
-      position: static;
-      display: flex;
-      flex-direction: column;
       flex-direction: row;
+      position: static;
       -webkit-transform: none;
-              transform: none; } }
-  .menu__item {
-    padding-right: 30px; }
+              transform: none;
+      padding: 0;
+      font-size: 1.125rem; } }
+  @media only screen and (min-width: 768px) {
+    .menu__item {
+      padding-right: 30px; } }
   .menu__link {
-    font-size: 1.125rem;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -273,11 +313,10 @@ select {
       height: .125rem;
       bottom: -4px; }
   .menu.active {
-    display: block;
     -webkit-transform: translateX(0);
             transform: translateX(0);
     width: 100%;
-    height: 100%; }
+    height: calc(100% - 88px); }
 
 .logo {
   text-transform: uppercase;
@@ -340,7 +379,8 @@ select {
     margin: 0 0 0.5rem 0;
     display: flex; }
   .footer__link {
-    display: flex; }
+    display: flex;
+    margin: 0.125rem 0 0 0.25rem; }
   .footer__list-icons {
     -webkit-column-count: 2;
             column-count: 2; }
@@ -349,16 +389,16 @@ select {
   background: url(./img/background-faq.png) no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 50px; }
+  padding: 3.125rem; }
   .faq__container {
     background: #F5F5F5;
-    padding: 25px;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    padding: 1rem; }
   .faq__col {
     box-sizing: border-box;
     text-align: left;
-    padding: 25px; }
+    padding: 1rem; }
     @media only screen and (min-width: 768px) {
       .faq__col {
         width: 50%; } }
@@ -387,6 +427,17 @@ body {
   width: 100%;
   text-align: center;
   background-color: #F5F5F5; }
+
+input:focus-within,
+label:focus-within,
+select:focus-within,
+textarea:focus-within {
+  outline: 1px solid #0062FF;
+  outline-offset: 3px; }
+
+@media only screen and (min-width: 940px) {
+  header {
+    height: 56px; } }
 
 a {
   position: relative;
@@ -445,9 +496,6 @@ select {
   max-width: 940px;
   margin: 0 auto; }
 
-.wrapper--big {
-  max-width: 1440px; }
-
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -460,6 +508,9 @@ select {
 
 .full-height {
   height: 100%; }
+
+.warning {
+  outline: 1.5px solid red; }
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -506,14 +557,6 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
-
-.icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor; }
 
 /* ==========================================
 Single-colored icons can be modified like so:
