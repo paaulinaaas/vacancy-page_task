@@ -185,7 +185,7 @@ select {
   cursor: pointer; }
 
 .hero {
-  background: url(../img/background-faq.png) no-repeat;
+  background: url(../img/background-hero.png) no-repeat;
   background-size: cover;
   background-position: center;
   height: 305px; }
