@@ -1,7 +1,4 @@
 import style from './scss/main.scss';
-import flatpickr from "flatpickr";
-
-flatpickr("#datepicker", {});
 
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
@@ -9,12 +6,6 @@ const inputs = document.querySelectorAll('.form__input');
 const menuItem = document.querySelectorAll('.menu__item');
 const formInfo = document.getElementById('formInfo');
 const submitBtn = document.getElementById("submitBtn");
-const isIE = /*@cc_on!@*/false || !!document.documentMode;
-
-if(isIE) {
-    console.log('ok')
-}
-
 
 //form validation
 inputs.forEach(input => {
