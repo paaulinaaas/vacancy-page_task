@@ -10,7 +10,7 @@
 <body>
 <header>
     <nav class="nav">
-        <div class="wrapper wrapper--big">
+        <div class="wrapper">
             <div class="nav__container">
                 <div>
                     <button class="btn hamburger">
@@ -82,7 +82,7 @@
                             </div>
                             <div class="form__field">
                                 <label for="emailAdress" class="form__label">Email</label>
-                                <input type="email" id="emailAdress" class="form__input">
+                                <input type="email" id="emailAdress" class="form__input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             </div>
                             <div class="form__field">
                                 <label for="streetName" class="form__label">Street</label>
@@ -90,10 +90,10 @@
                             </div>
                              <div class="form__field">
                                  <label for="streetNumber" class="form__label">House number</label>
-                                <input type="number" id="streetNumber" class="form__input" required>
+                                <input type="number" id="streetNumber" class="form__input" min="1" required>
                              </div>
                             <div class="form__field">
-                                 <label for="postalCode" class="form__label">Postal code</label>
+                                 <label for="postalCode" class="form__label">Dutch zip code</label>
                                 <input type="text" id="postalCode" class="form__input" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required>
                              </div>
                             <div class="form__field">
@@ -109,18 +109,20 @@
                             <h3 class="form__heading">Your motivation*</h3>
                             <div class="form__field">
                                 <label for="resume" class="visually-hidden">Your motivation</label>
-                                <textarea rows="6" name="resume" id="resume" class="form__input"></textarea>
+                                <textarea rows="6" name="resume" id="resume" class="form__input" required></textarea>
                             </div>
                             <div class="form__upload form__field">
                                 <div class="form__upload-box" id="file-name"></div>
                                 <label for="fileUpload" class="form__upload-btn form__btn">
                                     <span class="icon-folder-upload form__icon"></span>
                                     Upload your resume
-                                    <input type="file" accept=".doc, .docx, .pdf, .rtf, .txt" id="fileUpload" class="visually-hidden" onchange='uploadFile(this)'>
+                                    <input type="file" accept=".doc, .docx, .pdf, .rtf, .txt" id="fileUpload" class=" form__input visually-hidden" onchange='uploadFile(this)' required>
                                 </label>
                             </div>
-                            <input type="submit" value="Apply for this job" class="form__submit form__btn">
-                            <div id="container1"></div>
+                            <input type="submit" value="Apply for this job" class="form__submit form__btn" id="submitBtn">
+                        </div>
+                        <div id="formInfo" class="form__info">
+                            Thank you for applying!
                         </div>
                     </form>
             </div>
@@ -233,11 +235,4 @@
     </div>
 </footer>
 </body>
-
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="w1m7f7o05t5d7p0"></script>
-<script>
-    function uploadFile(target) {
-        document.getElementById("file-name").innerHTML = target.files[0].name;
-    }
-</script>
 </html>

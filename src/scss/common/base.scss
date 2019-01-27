@@ -23,8 +23,21 @@ body {
   text-align: center;
   background-color: $color-secondary;
 }
-
-a {
+input,
+label,
+select,
+textarea{
+  &:focus-within {
+    outline: 1px solid $color-btn;
+    outline-offset: 3px;
+  }
+}
+header {
+  @media #{$mediaLarge} {
+    height:56px;
+  }
+}
+  a {
   position: relative;
   cursor: pointer;
   text-decoration: none;
@@ -89,11 +102,6 @@ select {
   max-width: 940px;
   margin: 0 auto;
 }
-.wrapper--big {
-  max-width: 1440px;
-}
-
-
 
 // OTHERS
 .visually-hidden {
@@ -110,3 +118,8 @@ select {
 .full-height {
   height: 100%;
 }
+
+.warning {
+  outline: 1.5px solid red;
+}
+

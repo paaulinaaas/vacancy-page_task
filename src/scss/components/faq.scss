@@ -1,19 +1,19 @@
-@import "./common/base";
 .faq {
   background: url("../../dist/dist/img/background-faq.png")no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 50px;
+  padding: 3.125rem;
   &__container {
     background: $color-secondary;
-    padding: 25px;
     display: flex;
     flex-wrap: wrap;
+    padding: 1rem;
   }
+
   &__col {
     box-sizing: border-box;
     text-align: left;
-    padding: 25px;
+    padding: 1rem;
     @media #{$mediaMedium} {
       width:50%;
     }
