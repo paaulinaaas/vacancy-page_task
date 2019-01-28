@@ -8,16 +8,14 @@ const formInfo = document.getElementById('formInfo');
 const submitBtn = document.getElementById("submitBtn");
 
 //form validation
-inputs.forEach(input => {
-    input.addEventListener('focusout', ()=> {
-        if (!input.checkValidity() || input.value == '') {
-            input.closest('.form__field').classList.add('warning')
-        }
-        else {
-            input.closest('.form__field').classList.remove('warning')
-        }
-    })
-})
+const singleValidation = (input) => {
+    if (!input.target.checkValidity() || input.target.value == '') {
+        input.target.closest('.form__field').classList.add('warning')
+    }
+    else {
+        input.target.closest('.form__field').classList.remove('warning')
+    }
+}
 
 const isFormValid = () => {
     for (let i = 0; i < inputs.length; i++ ) {
@@ -30,6 +28,14 @@ const isFormValid = () => {
     }
     formInfo.classList.remove('show')
 }
+
+inputs.forEach(input => {
+    input.addEventListener('keyup', singleValidation, false)
+    input.addEventListener('focusout', singleValidation, false)
+})
+
+submitBtn.addEventListener('click', isFormValid)
+
 
 //closing menu after clicking on the link
 menuItem.forEach((item) => {
@@ -53,5 +59,5 @@ document.querySelector('.form').addEventListener('submit', event => {
     formInfo.classList.add('show')
 })
 
-submitBtn.addEventListener('click', isFormValid)
+
 
